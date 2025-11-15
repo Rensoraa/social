@@ -1,0 +1,161 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-1: #0f0f0f;
+  --bg-2: #1a1a1a;
+  --accent-a: #ff4d6d;
+  --accent-b: #7d3cff;
+  --muted: #d7d7d7;
+  --glass: rgba(255,255,255,0.05);
+}
+
+/* Background */
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background: radial-gradient(circle at top left, var(--bg-1), var(--bg-2) 60%);
+  color: #f2f2f2;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+/* glow blobs */
+body::before {
+  content: "";
+  position: absolute; z-index: -2;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(255,77,109,0.6), transparent 70%);
+  top: -80px; left: -80px; filter: blur(120px);
+}
+body::after {
+  content: "";
+  position: absolute; z-index: -2;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(125,60,255,0.45), transparent 70%);
+  bottom: -140px; right: -140px; filter: blur(160px);
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Titles */
+.glossy-title {
+  font-size: 2.4rem;
+  margin-bottom: .6rem;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+/* Social grid */
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 50px;
+}
+
+.link-btn {
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  background: var(--glass);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  transition: .25s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.link-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px rgba(255,77,109,0.7), 0 0 35px rgba(125,60,255,0.7);
+}
+
+/* Footer section */
+.footer-box {
+  margin-top: 50px;
+  padding: 1.6rem 1rem;
+  background: var(--glass);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+}
+
+.footer-text {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Email + copy button row */
+.email-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Email button */
+.footer-mail {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  transition: .22s ease;
+  box-shadow: 0 0 12px rgba(255,77,109,0.5), 0 0 18px rgba(125,60,255,0.5);
+}
+
+.footer-mail:hover {
+  transform: translateY(-3px);
+}
+
+/* Copy-to-clipboard button */
+.copy-btn {
+  padding: 0.55rem 0.8rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  background: var(--glass);
+  color: #fff;
+  backdrop-filter: blur(12px) saturate(140%);
+  transition: .22s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+.copy-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(255,77,109,0.6), 0 0 25px rgba(125,60,255,0.6);
+}
+
+/* Copied text */
+.copied-msg {
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity .3s ease;
+  font-size: 0.85rem;
+  color: var(--accent-b);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .links-grid { grid-template-columns: 1fr; }
+}

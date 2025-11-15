@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rensora's socials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="glossy-title">Rensora's Socials</h1>
+        <p class="sub">All my socials in one place.</p>
+
+        <div class="links-grid">
+            <a href="https://x.com/rensora__" target="_blank" class="link-btn">X (Twitter)</a>
+            <a href="https://discord.com/users/929521121475313804" target="_blank" class="link-btn">Discord</a>
+            <a href="https://steamcommunity.com/id/rensora" target="_blank" class="link-btn">Steam</a>
+            <a href="https://github.com/rensoraa" target="_blank" class="link-btn">GitHub</a>
+        </div>
+
+        <div class="footer-box">
+            <p class="footer-text">For inquiries about ValoTracker, contact me here:</p>
+
+            <div class="email-row">
+                <a href="mailto:rensora@valotracker.com" class="footer-mail">Email Me</a>
+
+                <button class="copy-btn" onclick="copyEmail()">📋</button>
+            </div>
+
+            <p id="copied-msg" class="copied-msg">Copied!</p>
+        </div>
+    </div>
+
+    <script>
+        function copyEmail() {
+            navigator.clipboard.writeText("rensora@valotracker.com");
+            const msg = document.getElementById("copied-msg");
+            msg.style.opacity = "1";
+            setTimeout(() => msg.style.opacity = "0", 1500);
+        }
+    </script>
+
+</body>
+</html>
